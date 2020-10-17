@@ -140,7 +140,7 @@ class Register():
         when get the value of a register, it will return to init situation
         """
         res = self.reg[str(loc)]
-        self.reg[str(loc)] = ''.join('%s' %id for id in [0 for i in range(32)])
+        # self.reg[str(loc)] = ''.join('%s' %id for id in [0 for i in range(32)])
         return res
 
     def show(self):
