@@ -41,7 +41,7 @@ def bin2dec(data):
     """
     res = 0
     index = 31
-    while index:
+    while index >= 0:
         res += int(data[index]) * pow(2, 31-index)
         index -= 1
     return res
@@ -173,7 +173,7 @@ class Machine():
 
     def Store(self, loc_r, loc_m):
         data = self.register.get(loc_r)
-        self.memory.save(bin2dec(data) , loc_m*4)
+        self.memory.save(loc_m, bin2dec(data))
         print("Store data from Register%d to Memory%d the value is %d\n"%(loc_r, loc_m, bin2dec(data)))
 
     def Show(self):
